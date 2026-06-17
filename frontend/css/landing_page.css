@@ -1,0 +1,112 @@
+.logo-image{
+    height: auto;
+    width: 10%;
+}
+body{
+    font-family: euclid-medium,sans-serif;
+    color:#022A29;
+}
+.logo-text-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.logo-text{
+    font-size: 30px;
+    font-weight: bold;
+    color: #022A29;;
+    margin-left: 10px;
+    
+}
+.logo{
+    display:flex;
+    align-items: center;
+    
+}
+.nav-wrapper{
+    display: flex;
+    padding:20px;
+}
+.nav-links{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    gap: 20px;
+    margin-left: auto;
+    
+}
+.signin-link,.signup-link{
+    text-decoration: none;
+    color: gray;
+}
+ul{
+    list-style-type: none;
+}
+.quote-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+}
+.quote{
+    margin:5px;
+    color:#45AA6D;
+
+}.sub-quote{
+    margin:5px;
+}
+.illustration-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.illustration-container video{
+    width: 50%;
+    height: auto;
+}
+.project-head{
+    font-size: 30px;
+    font-weight: bold;
+    color: #022A29;
+}
+.about_project{
+    text-align: center;
+    width:76%;
+    margin: auto;
+}
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16%;
+    padding: 20px;
+
+}
+.learning_icon,.habit_icon,.dashboard_icon{
+    width: 70%;
+    height: auto;
+}
+.learning_feature,.habit_feature,.dashboard_feature{
+    width:50%;
+}
+.learn_feature_heading,.habit_feature_heading,.dashboard_feature_heading{
+    font-weight: bold;
+    color: #45AA6D;
+    text-align: center;
+}
+.learning_desc,.habit_desc,.dashboard_desc{
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    color: #022A29;
+}
+.footer{
+    padding: 2px;
+    text-align: center;
+    color: white;
+    background-color: #45AA6D;
+}

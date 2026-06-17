@@ -1,0 +1,193 @@
+body{
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   background-color: #0474fe;
+   min-height:100vh;
+   padding:20px;
+}
+.projectName{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+.projectVision{
+    font-size: 15px;
+    color: white;
+}
+form{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+div{
+    display: flex;
+}
+#form-heading{
+    margin-top: 60px;
+    font-size: 18px;
+    text-align: center;
+}
+label{
+    padding-left: 5px;
+    font-size: 10px;
+    margin-bottom: 3px;
+}
+input{
+    display: flex;
+    background-color: #efefef;
+    border: 0px;
+    padding: 10px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+h1,h3{
+    font-size: 10px;
+    text-align: center;
+    display:flex;
+    margin:0;
+}
+.switch-buttons{
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    /* top: 45px; */
+    gap: 25px;
+    border-radius: 10px;
+    transform: translateY(46px);
+}
+@media (max-width:768px){
+
+   .switch-buttons{
+      transform: translateY(58px);
+   }
+
+}
+.switchingButton{
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+.switchingButton:hover{
+    background-color: #038aff;
+    color:white;
+    
+}
+.container{
+    width:90%;
+    max-width:500px;
+    display: flex;
+    position: relative;
+}
+.intro-container{
+    position: absolute;
+    z-index: 2;
+    width: 40vh;
+    top: -12vh;
+    padding: 35px;
+    height: 10vh;
+    border-radius: 0 0 20px 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #0474fe;
+}
+.form-container{
+    width: 40vh;
+    top: 12px;
+    height: 60vh;
+    padding: 35px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+#signup-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#signin-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submitButton{
+    width: 100px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #038aff;
+    border: none;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    margin: auto;
+    font-weight: bold;
+    font-size: 12px;
+}
+.submitButton:hover{
+    background-color: #efefef;
+    color:black;
+    border: 1px solid black;
+}
+
+.or{
+    font-size: 10px;
+    color: black;
+    padding:10px;
+    margin:auto;
+}
+.forgotPassword{
+    font-size: 10px;
+    color: #038aff;
+    text-decoration: none;
+    display: flex;
+    padding:10px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+.accountMissing{
+    font-size: 10px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    padding:10px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+}
+#toggle-btn{
+    position: absolute;
+    right: 85px;
+    top: 269px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#signup-toggle-btn{
+    position: absolute;
+    right: 85px;
+    top: 273px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#google-signin{
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}

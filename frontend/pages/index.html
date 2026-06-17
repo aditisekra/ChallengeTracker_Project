@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressa</title
+</head>
+<body>
+    <div class="container">
+        <div class="intro-container">
+            <h1 class="projectName">Progressa</h1>
+            <h3 class="projectVision">Consistency is the key</h3>
+            <!-- switching buttons -->
+            <div class="switch-buttons">
+                <button class="switchingButton" id="signup-switchingButtton" >Sign Up</button>
+                <button class="switchingButton" id="signin-switchingButtton" >Sign In</button>
+            </div>
+        </div>
+        <div class="form-container">
+            <div id="signup-form" style="display:none;">
+                <form action="">
+                    <h2 id="form-heading">Create Account</h2>
+                    <label for="username">USERNAME</label>
+                    <input type="text" name="username" id="username" required placeholder="Enter username">
+                    <label for="signup-email">EMAIL</label>
+                    <input type="email" name="email" id="signup-email" required placeholder="Enter email">
+                    <label for="signup-password">PASSWORD</label>
+                    <input type="password" name="password" id="signup-password" required placeholder="Enter password">
+                    <label  for="confirm-password">CONFIRM PASSWORD</label>
+                    <input type="password" name="confirm-password" id="confirm-password" required placeholder="Confirm your password">
+                    <button id="signup-toggle-btn">
+                        <i id="signup-eye-icon" class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="submitButton" type="submit">Sign Up</button>
+                    <p class="or">OR SignUp with</p>
+                    <button id="google-signin" onclick="alert('Hello!')">
+                        <i class="fa-brands fa-google"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="signin-form" >
+                <form action=""> 
+                    <h2 id="form-heading">Welcome Back</h2>
+                    <label for="signin-email">EMAIL</label>
+                    <input type="email" name="email" id="signin-email" required placeholder="Enter email">
+                    <label for="signin-password">PASSWORD</label>
+                    <input type="password" name="password" id="signin-password" required placeholder="Enter password">
+                    <button id="toggle-btn">
+                        <i id="eye-icon" class="fa-solid fa-eye"></i>
+                    </button>
+                    <button class="submitButton" type="submit">Sign In</button>
+                    <a class="forgotPassword" href="#">Forgot Password?</a>
+                    <p class="accountMissing">Don't have an account? <a id="alternate-signup" href="#">SIGN UP</a></p>
+                </form>            
+            </div>            
+        </div>
+    </div>
+    <script src="../js/script.js"></script>
+</body>
+</html>

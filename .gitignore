@@ -1,0 +1,27 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+app/.env
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Alembic Cache
+app/alembic/__pycache__/
+app/alembic/versions/__pycache__/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
