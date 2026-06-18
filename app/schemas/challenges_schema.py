@@ -18,8 +18,8 @@ class HabitChallengeCreate(ChallengeBase):
     pass
 
 class ChallengeUpdate(BaseModel):
-    title: str | None =Field(default=None,min_length=3,max_length=30)
-    description: str | None =Field(default=None,min_length=3,max_length=40)
+    title: str | None = Field(default=None,min_length=3,max_length=30)
+    description: str | None = Field(default=None,min_length=3,max_length=40)
     end_date: Optional[date] = None
     status: Optional[ChallengeStatus] = None
 

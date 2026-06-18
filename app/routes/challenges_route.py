@@ -25,8 +25,8 @@ def getChallengeById(id:int,current_user: User = Depends(get_current_user),db:Se
     return crud.challenges_crud.get_challengeById(id,current_user.id,db)
 
 @router.put("/challenges/{id}")
-def update_challenges(challenge:schemas.challenges_schema.ChallengeUpdate,id:int,current_user: User = Depends(get_current_user),db:Session=Depends(get_db)):
-    return crud.challenges_crud.update_challenge(id,current_user.id,challenge,db)
+def update_challenges(id:int,challenge:schemas.challenges_schema.ChallengeUpdate,current_user: User = Depends(get_current_user),db:Session=Depends(get_db)):
+    return crud.challenges_crud.update_challenge(id,challenge,current_user.id,db)
 
 @router.delete("/challenges/{id}")
 def delete_challenge(id:int,current_user: User = Depends(get_current_user),db:Session=Depends(get_db)):

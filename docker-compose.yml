@@ -16,7 +16,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 
-  backend:working dockerized version
+  backend:
     build: .
     
     container_name: 

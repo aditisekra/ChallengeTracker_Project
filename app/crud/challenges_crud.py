@@ -52,19 +52,20 @@ def get_challengeById(id:int,user_id:int,db:Session):
             status_code=404, 
             detail="Challenge not found")
     
-def update_challenge(id:int,user_id:int,challenge:schemas.challenges_schema.ChallengeUpdate,db:Session):
+def update_challenge(id:int,challenge:schemas.challenges_schema.ChallengeUpdate,user_id:int,db:Session):
     accessed_challenge=db.query(models.challenges_model.Challenges).filter(models.challenges_model.Challenges.id==id,models.challenges_model.Challenges.userId==user_id).first()
-    if accessed_challenge:
-        update_data = challenge.model_dump(exclude_unset=True)
-    for key, value in update_data.items():
-        setattr(accessed_challenge, key, value)
-        db.commit()
-        db.refresh(accessed_challenge)
-        return accessed_challenge
-    else:
+    if not accessed_challenge:
         raise HTTPException(
             status_code=404, 
             detail="Challenge not found")
+    update_data = challenge.model_dump(exclude_unset=True)
+    for key, value in update_data.items():
+        setattr(accessed_challenge, key, value)
+    db.commit()
+    db.refresh(accessed_challenge)
+    return accessed_challenge
+    
+
     
 def delete_challenge(id:int,user_id:int,db:Session):
     accessed_challenge=db.query(models.challenges_model.Challenges).filter(models.challenges_model.Challenges.id==id,models.challenges_model.Challenges.userId==user_id).first()
