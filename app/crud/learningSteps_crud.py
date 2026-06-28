@@ -2,6 +2,9 @@
 from sqlalchemy.orm import Session
 from app import models,schemas
 from fastapi import HTTPException
+from app.schemas.enums import ChallengeStatus
+
+
 
 def add_topic(topic:schemas.learningSteps_schema.createTopic,user_id:int,db:Session):
     challenge = db.query(
@@ -16,6 +19,24 @@ def add_topic(topic:schemas.learningSteps_schema.createTopic,user_id:int,db:Sess
     db.commit()
     db.refresh(new_topic)
     return new_topic
+
+def add_AIgenerated_topics(topicList:str,challenge_id:int,user_id:int,db:Session):
+    from app.services import ai_services
+    service=ai_services.AI_services()
+    challenge = db.query(
+    models.challenges_model.Challenges).filter(
+    models.challenges_model.Challenges.userId == user_id
+    ).first()
+    if not challenge:
+        return "NOT AUTHORIZED"
+    topicarray=topicList.split(",")
+    for ai_title in topicarray:
+        new_topic=models.learningSteps_model.Topics(title=ai_title,challenge_id=challenge_id,status=ChallengeStatus.not_completed)
+        db.add(new_topic)
+        db.commit()
+        db.refresh(new_topic)
+    return new_topic
+
 
 def getAll_Topics(challenge_id:int,user_id: int, db: Session):
     return db.query(

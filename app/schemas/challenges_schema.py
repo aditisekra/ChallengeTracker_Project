@@ -26,6 +26,7 @@ class ChallengeUpdate(BaseModel):
 class LearningChallengeResponse(ChallengeBase):
     id: int
     userId: int
+    title: str | None = Field(default=None,min_length=3,max_length=30)
     topics: List[
         learningSteps_schema.TopicsBase
     ] = Field(default_factory=list)

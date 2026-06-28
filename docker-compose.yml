@@ -1,4 +1,5 @@
 services:
+
   db:
     image: postgres:16
     container_name: challengetracker_db
@@ -16,20 +17,44 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
 
+  ollama_container:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+
+
+  webui:
+    image: ghcr.io/open-webui/open-webui:main
+    ports:
+      - "3000:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama_container:11434
+    depends_on:
+      - ollama_container
+
+
   backend:
     build: .
     
+    volumes:
+      - .:/app
     container_name: 
       challengetracker_backend
 
     depends_on:
       - db
+      - ollama_container
 
     ports:
       - "8000:8000"
 
     environment:
       DATABASE_URL: postgresql://postgres:password@db:5432/challengeTracker
+      OLLAMA_HOST:  http://ollama_container:11434
+      PORT: 8000
 
 volumes:
   postgres_data:
+  ollama_storage:
